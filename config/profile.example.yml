@@ -1,0 +1,82 @@
+# config/profile.yml — Candidate Profile
+# Copy to config/profile.yml and fill in your real values.
+# This file is in .gitignore — never commit it.
+
+# ── Basic Info ────────────────────────────────────────────────
+full_name: Jane Smith
+email: jane.smith@example.com
+location: San Francisco, CA
+phone: +1 (555) 000-0000
+linkedin: https://linkedin.com/in/janesmith
+github: https://github.com/janesmith
+portfolio: https://janesmith.io
+
+# ── Professional Identity ─────────────────────────────────────
+headline: "ML Engineer turned AI product builder"
+
+exit_story: |
+  Built and sold my SaaS after 5 years. Now focused on applied AI at scale.
+
+# ── Target Roles ──────────────────────────────────────────────
+target_roles:
+  primary:
+    - name: Senior AI Engineer
+      archetype: "AI Platform / LLMOps Engineer"
+    - name: Staff ML Engineer
+      archetype: "Agentic Workflows / Automation"
+  secondary:
+    - name: Senior AI Product Manager
+      archetype: "Technical AI Product Manager"
+  adjacent:
+    - name: Solutions Architect
+      archetype: "AI Solutions Architect"
+
+# ── Narrative ─────────────────────────────────────────────────
+narrative:
+  superpowers:
+    - End-to-end ML pipelines
+    - Rapid prototyping
+    - Cross-functional communication
+
+  proof_points:
+    - label: Project Alpha
+      metric: "Reduced inference latency 40%"
+      source: cv.md
+    - label: Open-source tool
+      metric: "2K+ GitHub stars"
+      source: article-digest.md
+
+# ── Compensation ──────────────────────────────────────────────
+compensation:
+  currency: USD
+  target_base: 175000
+  minimum_base: 120000
+  range_display: "$150K–200K"
+  open_to_equity: true
+  contractor_ok: true
+  # contractor_rate_usd_day: 1200
+
+# ── Location & Remote ─────────────────────────────────────────
+location_preferences:
+  mode: remote           # remote | hybrid | onsite
+  timezone: "UTC-8"
+  willing_to_relocate: false
+  visa_sponsorship_needed: false
+  onsite_days_per_month: 1  # for hybrid roles
+
+# ── CV Output Format ──────────────────────────────────────────
+cv:
+  output_format: html    # html | latex
+  # latex_template: templates/cv-template.tex  # if output_format: latex
+
+# ── Auto-pipeline gate ────────────────────────────────────────
+# Generate PDF automatically when score >= this value.
+# Set to 0 to generate PDF for every offer.
+# Set to 4.0 to only generate for strong fits.
+auto_pdf_score_threshold: 3.0
+
+# ── Optional: Canva integration ───────────────────────────────
+# canva:
+#   design_id: "DAFxxxxxxxx"
+#   font_budget_name: 45     # max chars for name section
+#   font_budget_summary: 400 # max chars for summary section

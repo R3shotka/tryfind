@@ -1,0 +1,287 @@
+# templates/portals.example.yml — Portal Scanner Configuration
+# Copy to portals.yml and customize for your search.
+# This file is NOT gitignored (it's a template). portals.yml IS gitignored.
+
+# ── Location Filter (optional) ────────────────────────────────────────────────
+# Uncomment and configure to enable geographic filtering.
+# always_allow overrides block rules (e.g., "remote" locations always pass)
+# location_filter:
+#   always_allow:
+#     - remote
+#     - worldwide
+#     - global
+#     - anywhere
+#   allow:
+#     - europe
+#     - germany
+#     - netherlands
+#     - spain
+#     - uk
+#     - canada
+#   block:
+#     - us only
+#     - usa only
+#     - canada only
+#     - must be located in
+#     - requires relocation to
+
+# ── Title Filter ──────────────────────────────────────────────────────────────
+title_filter:
+  positive:
+    # AI/ML roles
+    - ai engineer
+    - ml engineer
+    - machine learning engineer
+    - ai product manager
+    - ai pm
+    - llm engineer
+    - applied ai
+    - applied ml
+    - generative ai
+    - ai platform
+    - mlops
+    - llmops
+    - ai architect
+    - solutions architect
+    - forward deployed
+    - ai transformation
+    # Engineering with AI focus
+    - software engineer ai
+    - backend engineer ai
+    # German/DACH market
+    - ki-ingenieur
+    - künstliche intelligenz
+    - maschinelles lernen
+
+  negative:
+    # Seniority exclusions (if not applicable)
+    # - junior
+    # - intern
+    # - internship
+    # Tech stack exclusions
+    - .net developer
+    - java developer
+    - ruby developer
+    - php developer
+    - ios developer
+    - android developer
+    - blockchain
+    - web3
+    - crypto
+    - salesforce
+    - sap
+    # Non-tech roles
+    - sales representative
+    - account executive
+    - business development representative
+    - customer success manager
+    - marketing manager
+    - hr manager
+    - recruiter
+
+  seniority_boost:
+    - senior
+    - staff
+    - principal
+    - lead
+    - head of
+
+# ── Search Queries ────────────────────────────────────────────────────────────
+# WebSearch queries for Level 3 discovery (new companies)
+search_queries:
+  # Ashby job board
+  - site:jobs.ashbyhq.com "ai engineer" remote
+  - site:jobs.ashbyhq.com "ml engineer" remote
+  - site:jobs.ashbyhq.com "llm" engineer remote
+
+  # Greenhouse job board
+  - site:boards.greenhouse.io "ai engineer" remote
+  - site:boards.greenhouse.io "applied ai" remote
+  - site:boards.greenhouse.io "machine learning" remote
+
+  # Workable
+  - site:apply.workable.com "ai engineer" remote
+
+  # Remote-first boards
+  - site:remotive.com "ai engineer"
+  - site:weworkremotely.com "machine learning"
+
+  # Spanish market
+  - site:infojobs.net "inteligencia artificial" remoto
+  - site:linkedin.com/jobs "ingeniería de IA" España
+
+  # Turkish market
+  - site:kariyer.net "yapay zeka mühendisi" uzaktan
+  - site:linkedin.com/jobs "AI engineer" İstanbul remote
+
+  # European aggregators
+  - site:eu.workable.com "ai engineer" remote europe
+  - site:europeanjobsite.com "machine learning" remote
+
+  # DACH market
+  - site:stepstone.de "KI-Ingenieur" remote
+  - site:xing.com "AI Engineer" Deutschland remote
+
+  # DevRel / technical community
+  - "developer relations" AI "remote" site:greenhouse.io
+  - "developer advocate" "AI" site:jobs.ashbyhq.com
+
+# ── Tracked Companies ─────────────────────────────────────────────────────────
+# Each company MUST have careers_url.
+# Prefer the branded careers URL; use ATS-hosted URL only as fallback.
+#
+# Fields:
+#   name: company name (used in scan logs)
+#   careers_url: URL to careers page (Level 1 Playwright)
+#   api: ATS API config for Level 2 (optional)
+#     type: greenhouse | ashby | lever | bamboohr | recruitee | workable | smartrecruiters
+#     slug: identifier used in API URL
+#   notes: context for evaluation
+#   enabled: true | false (omit = true)
+
+tracked_companies:
+  # ── AI Labs ─────────────────────────────────────────────────────────────────
+  - name: Anthropic
+    careers_url: https://www.anthropic.com/careers
+    api:
+      type: greenhouse
+      slug: anthropic
+    notes: Creator of Claude. Constitutional AI research. Applied AI teams.
+    enabled: true
+
+  - name: OpenAI
+    careers_url: https://openai.com/careers
+    notes: ChatGPT, GPT-4. Strong research + product engineering roles.
+    enabled: true
+
+  - name: Cohere
+    careers_url: https://cohere.com/about/careers
+    api:
+      type: greenhouse
+      slug: cohere
+    notes: Enterprise LLMs. Strong MLOps and solutions architecture roles.
+    enabled: true
+
+  - name: Mistral AI
+    careers_url: https://mistral.ai/company/careers
+    notes: Paris-based LLM lab. Strong European presence.
+    enabled: true
+
+  # ── Voice / Conversational AI ────────────────────────────────────────────────
+  - name: ElevenLabs
+    careers_url: https://elevenlabs.io/careers
+    api:
+      type: ashby
+      slug: elevenlabs
+    notes: Text-to-speech. Growing fast. Strong engineering culture.
+    enabled: true
+
+  - name: Deepgram
+    careers_url: https://deepgram.com/company/careers
+    api:
+      type: lever
+      slug: deepgram
+    notes: Speech-to-text API. AI infrastructure company.
+    enabled: true
+
+  - name: PolyAI
+    careers_url: https://poly.ai/careers
+    notes: Conversational AI for enterprise. UK-based, remote-friendly.
+    enabled: true
+
+  # ── Automation / No-code ─────────────────────────────────────────────────────
+  - name: Zapier
+    careers_url: https://zapier.com/about
+    api:
+      type: greenhouse
+      slug: zapier
+    notes: Workflow automation. Fully remote. Strong AI integrations product.
+    enabled: true
+
+  - name: n8n
+    careers_url: https://n8n.io/careers
+    notes: Open-source workflow automation. Berlin-based, strong EU presence.
+    enabled: true
+
+  - name: Airtable
+    careers_url: https://airtable.com/careers
+    api:
+      type: greenhouse
+      slug: airtable
+    notes: No-code database platform. Building AI features rapidly.
+    enabled: true
+
+  # ── DACH Ecosystem ───────────────────────────────────────────────────────────
+  - name: Aleph Alpha
+    careers_url: https://www.aleph-alpha.com/careers
+    notes: German sovereign AI. EU-focused LLMs.
+    enabled: true
+
+  - name: DeepL
+    careers_url: https://www.deepl.com/pro/careers
+    notes: AI translation leader. Cologne-based, strong remote policy.
+    enabled: true
+
+  - name: Helsing
+    careers_url: https://helsing.ai/careers
+    notes: Defense AI. EU-focused. Strong AI research team.
+    enabled: true
+
+  - name: Celonis
+    careers_url: https://www.celonis.com/careers
+    notes: Process mining + AI. Munich HQ, global remote roles.
+    enabled: true
+
+  # ── UK / Ireland ─────────────────────────────────────────────────────────────
+  - name: Wayve
+    careers_url: https://wayve.ai/join-us
+    notes: Autonomous driving AI. London. Strong ML engineering culture.
+    enabled: true
+
+  - name: Stability AI
+    careers_url: https://stability.ai/careers
+    notes: Image generation AI. Fully distributed.
+    enabled: true
+
+  - name: Synthesia
+    careers_url: https://www.synthesia.io/careers
+    api:
+      type: greenhouse
+      slug: synthesia
+    notes: AI video generation. London-based, remote-friendly.
+    enabled: true
+
+  # ── Nordics ──────────────────────────────────────────────────────────────────
+  - name: Kry (Livi)
+    careers_url: https://www.kry.se/en/careers
+    notes: Digital health. Stockholm. AI-assisted triage.
+    enabled: false
+
+  # ── Iberia ───────────────────────────────────────────────────────────────────
+  - name: Factorial HR
+    careers_url: https://factorialhr.com/join-us
+    api:
+      type: greenhouse
+      slug: factorial
+    notes: HR SaaS. Barcelona-based, hybrid.
+    enabled: false
+
+  # ── Canada ───────────────────────────────────────────────────────────────────
+  - name: Cohere
+    careers_url: https://cohere.com/about/careers
+    api:
+      type: greenhouse
+      slug: cohere
+    notes: (duplicate of above — cohere has Toronto HQ too)
+    enabled: false
+
+  # ── Turkey ───────────────────────────────────────────────────────────────────
+  - name: Getir
+    careers_url: https://getir.com/kariyer
+    notes: Rapid delivery. Istanbul. AI for logistics.
+    enabled: false
+
+  - name: Trendyol
+    careers_url: https://trendyol.com/kariyer
+    notes: Turkish e-commerce. AI for recommendations.
+    enabled: false

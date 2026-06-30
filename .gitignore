@@ -1,0 +1,6 @@
+node_modules/
+.env
+data/scan-history.tsv
+output/
+reports/
+*.pdf

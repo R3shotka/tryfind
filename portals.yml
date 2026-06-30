@@ -1,0 +1,290 @@
+# Portal Scanner Configuration — Kudinov Matvii
+# Junior .NET Developer | Remote | Ukraine
+#
+# Customize this file to add/remove companies and job boards.
+# Run: /career-ops scan  to discover new offers automatically.
+
+# -- Title filter --
+# Keywords to match job titles. At least 1 positive must match.
+
+title_filter:
+  positive:
+    # .NET ecosystem
+    - ".NET"
+    - "C#"
+    - "ASP.NET"
+    - "dotnet"
+    - "Dot Net"
+    # Backend / server-side
+    - "Backend Developer"
+    - "Backend Engineer"
+    - "Software Developer"
+    - "Software Engineer"
+    - "Web Developer"
+    - "Web API"
+    # AI / ML integration
+    - "AI Engineer"
+    - "ML Engineer"
+    - "Computer Vision"
+    - "ONNX"
+    # Junior/Trainee-friendly
+    - "Junior Developer"
+    - "Junior Engineer"
+    - "Junior Programmer"
+    - "Trainee Developer"
+    - "Trainee .NET"
+    - "Graduate Developer"
+    - "Entry Level"
+    - "Intern Developer"
+  negative:
+    # Exclude roles clearly not for juniors unless stated otherwise
+    - "Principal"
+    - "Staff"
+    - "Director"
+    - "VP "
+    - "Head of"
+    # Exclude unrelated stacks
+    - "PHP"
+    - "Ruby"
+    - "Python Developer"
+    - "Java Developer"
+    - "Golang"
+    - "iOS"
+    - "Android"
+    - "React Native"
+    - "Salesforce"
+    - "SAP"
+    - "COBOL"
+    - "Mainframe"
+    - "Blockchain"
+    - "Web3"
+    - "Solidity"
+    - "DevOps"
+    - "SRE"
+    - "QA Engineer"
+    - "Data Analyst"
+    - "Data Scientist"
+  seniority_boost:
+    # These help but are not required
+    - "Junior"
+    - "Trainee"
+    - "Entry"
+    - "Graduate"
+    - "Mid"
+
+# -- Location filter --
+# Allow remote globally + Cherkasy. Block anything requiring on-site outside Ukraine.
+
+location_filter:
+  always_allow:
+    - "Remote"
+    - "Ukraine"
+    - "Cherkasy"
+  allow:
+    - "Remote"
+    - "Worldwide"
+    - "Global"
+    - "Anywhere"
+    - "Ukraine"
+    - "EU"
+    - "Europe"
+  block:
+    - "On-site only"
+    - "Must be in office"
+
+# -- Search queries --
+# WebSearch queries to discover job postings across boards.
+
+search_queries:
+
+  # -- Remote .NET Junior boards --
+  - name: Greenhouse — Junior .NET / C#
+    query: 'site:boards.greenhouse.io OR site:job-boards.greenhouse.io "Junior" ".NET" OR "C#" OR "ASP.NET" remote'
+    enabled: true
+
+  - name: Ashby — .NET Backend Remote
+    query: 'site:jobs.ashbyhq.com ".NET" OR "C#" OR "ASP.NET Core" backend developer remote junior'
+    enabled: true
+
+  - name: Lever — Junior .NET Remote
+    query: 'site:jobs.lever.co "Junior" OR "Entry Level" ".NET" OR "C#" OR "ASP.NET" remote'
+    enabled: true
+
+  # -- General remote job boards --
+  - name: WeWorkRemotely — .NET Backend
+    query: 'site:weworkremotely.com ".NET" OR "C#" OR "ASP.NET" backend developer remote'
+    enabled: true
+
+  - name: Remote.co — .NET Developer
+    query: 'site:remote.co ".NET" OR "C#" developer junior remote'
+    enabled: true
+
+  - name: Remotive — .NET / C#
+    query: 'site:remotive.com ".NET" OR "C#" OR "ASP.NET" developer junior remote'
+    enabled: true
+
+  - name: RemoteOK — .NET / C#
+    query: 'site:remoteok.com ".NET" OR "C#" backend developer junior'
+    enabled: true
+
+  - name: Himalayas — Junior .NET Remote
+    query: 'site:himalayas.app ".NET" OR "C#" OR "ASP.NET" junior developer remote'
+    enabled: true
+
+  # -- European / EMEA job boards (Ukraine-friendly) --
+  - name: EuRemoteJobs — .NET Backend
+    query: 'site:euremotejobs.com ".NET" OR "C#" OR "ASP.NET" backend developer'
+    enabled: true
+
+  - name: NoFluffJobs — .NET (EU/Remote)
+    query: 'site:nofluffjobs.com ".NET" OR "C#" OR "ASP.NET Core" junior remote OR ukraine'
+    enabled: true
+
+  - name: JustJoin.it — .NET Junior
+    query: 'site:justjoin.it ".NET" OR "C#" OR "ASP.NET" junior remote'
+    enabled: true
+
+  - name: Robota.ua — .NET
+    query: 'site:robota.ua ".NET" OR "C#" OR "ASP.NET" junior розробник OR developer'
+    enabled: true
+
+  - name: DOU.ua — .NET Junior
+    query: 'site:jobs.dou.ua ".NET" OR "C#" OR "ASP.NET" junior'
+    enabled: true
+
+  - name: Work.ua — .NET Junior
+    query: 'site:work.ua ".NET" OR "C#" backend junior розробник remote'
+    enabled: true
+
+  # -- YC / Startup boards --
+  - name: YC Jobs — .NET / Backend Junior
+    query: 'site:workatastartup.com ".NET" OR "C#" OR "ASP.NET" backend junior remote'
+    enabled: true
+
+  # -- AI-focused roles with .NET --
+  - name: AI Jobs — .NET Integration
+    query: '"AI" ".NET" OR "C#" "ONNX" OR "ML" backend developer junior remote'
+    enabled: true
+
+# -- Tracked companies --
+# Companies to scan directly. Add any company you want to follow closely.
+
+tracked_companies:
+
+  # -- Remote-friendly companies known to hire .NET junior devs --
+
+  - name: Telerik (Progress)
+    careers_url: https://careers.progress.com
+    scan_method: websearch
+    scan_query: 'site:careers.progress.com ".NET" OR "C#" developer remote junior'
+    notes: "Sofia BG. .NET tools (Telerik). EMEA remote."
+    enabled: true
+
+  - name: JetBrains
+    careers_url: https://www.jetbrains.com/careers/jobs/
+    scan_method: websearch
+    scan_query: 'site:jetbrains.com/careers ".NET" OR "C#" OR "Rider" developer remote'
+    notes: "Prague/Amsterdam. Remote friendly. Makes Rider (.NET IDE)."
+    enabled: true
+
+  - name: Particular Software
+    careers_url: https://particular.net/careers
+    scan_method: websearch
+    scan_query: '"Particular Software" OR "NServiceBus" careers ".NET" OR "C#" remote'
+    notes: "100% remote. NServiceBus/.NET ecosystem. Hires worldwide."
+    enabled: true
+
+  - name: Octopus Deploy
+    careers_url: https://octopus.com/company/careers
+    scan_method: websearch
+    scan_query: 'site:octopus.com/company/careers ".NET" OR "C#" developer remote'
+    notes: "Brisbane/Remote. .NET deployment automation. Hires globally."
+    enabled: true
+
+  - name: Raygun
+    careers_url: https://raygun.com/about/careers
+    scan_method: websearch
+    scan_query: '"raygun" careers ".NET" OR "C#" developer remote'
+    notes: "Wellington NZ / Remote. .NET APM tool."
+    enabled: true
+
+  - name: Stackify
+    careers_url: https://stackify.com/careers/
+    scan_method: websearch
+    scan_query: '"stackify" careers ".NET" OR "C#" developer remote'
+    notes: ".NET performance monitoring. Remote."
+    enabled: true
+
+  # -- Ukrainian IT companies (Cherkasy + remote) --
+
+  - name: N-iX
+    careers_url: https://n-ix.com/career/
+    scan_method: websearch
+    scan_query: 'site:n-ix.com/career ".NET" OR "C#" junior developer'
+    notes: "Lviv/Kyiv Ukraine. .NET outsourcing. Junior friendly."
+    enabled: true
+
+  - name: SoftServe
+    careers_url: https://career.softserveinc.com
+    scan_method: websearch
+    scan_query: 'site:career.softserveinc.com ".NET" OR "C#" junior developer ukraine'
+    notes: "Kyiv/Lviv Ukraine. Large IT outsourcing. Good for juniors."
+    enabled: true
+
+  - name: EPAM Ukraine
+    careers_url: https://jobs.epam.com
+    scan_method: websearch
+    scan_query: 'site:jobs.epam.com ".NET" OR "C#" junior developer ukraine'
+    notes: "Multiple UA cities including Cherkasy. .NET practice."
+    enabled: true
+
+  - name: GlobalLogic Ukraine
+    careers_url: https://www.globallogic.com/ua/careers/
+    scan_method: websearch
+    scan_query: '"globallogic" ukraine careers ".NET" OR "C#" junior'
+    notes: "Kyiv/Kharkiv Ukraine. Outsourcing, .NET projects."
+    enabled: true
+
+  - name: Ciklum
+    careers_url: https://www.ciklum.com/careers
+    scan_method: websearch
+    scan_query: 'site:ciklum.com/careers ".NET" OR "C#" junior developer ukraine'
+    notes: "Kyiv Ukraine. IT outsourcing, many .NET projects."
+    enabled: true
+
+  - name: Intellias
+    careers_url: https://intellias.com/careers/
+    scan_method: websearch
+    scan_query: 'site:intellias.com/careers ".NET" OR "C#" developer junior'
+    notes: "Lviv/Kyiv Ukraine. Tech product company."
+    enabled: true
+
+  - name: Sigma Software
+    careers_url: https://sigma.software/about/career
+    scan_method: websearch
+    scan_query: 'site:sigma.software/about/career ".NET" OR "C#" junior'
+    notes: "Kharkiv/Kyiv Ukraine. Software outsourcing."
+    enabled: true
+
+  # -- International remote companies with Ukraine-friendly hiring --
+
+  - name: Toptal
+    careers_url: https://www.toptal.com/careers
+    scan_method: websearch
+    scan_query: '"toptal" careers ".NET" OR "C#" developer'
+    notes: "Remote-only talent network. Accepts Ukraine."
+    enabled: true
+
+  - name: Lemon.io
+    careers_url: https://lemon.io
+    scan_method: websearch
+    scan_query: '"lemon.io" ".NET" OR "C#" developer remote ukraine'
+    notes: "Remote dev marketplace. Ukraine-friendly."
+    enabled: true
+
+  - name: Turing
+    careers_url: https://www.turing.com/jobs
+    scan_method: websearch
+    scan_query: 'site:turing.com/jobs ".NET" OR "C#" backend developer'
+    notes: "AI-powered remote engineering. Accepts Ukraine."
+    enabled: true

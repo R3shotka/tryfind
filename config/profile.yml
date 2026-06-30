@@ -1,0 +1,87 @@
+# Top-level fields required by cv-sync-check
+full_name: "Kudinov Matvii"
+email: "mrkudik368@gmail.com"
+
+candidate:
+  full_name: "Kudinov Matvii"
+  email: "mrkudik368@gmail.com"
+  phone: "+380964003049"
+  location: "Cherkasy, Ukraine"
+  linkedin: "https://www.linkedin.com/in/matvii-kudinov/"
+  github: "github.com/R3shotka"
+  portfolio_url: ""
+  twitter: ""
+
+target_roles:
+  primary:
+    - "Junior .NET Developer"
+    - "Junior Backend Developer (C#)"
+    - "C# Developer"
+    - "Software Engineer (.NET)"
+    - "Trainee .NET Developer"
+  archetypes:
+    - name: "Junior .NET Developer"
+      level: "Junior/Trainee"
+      fit: "primary"
+    - name: "Junior Backend Developer (C#)"
+      level: "Junior"
+      fit: "primary"
+    - name: "C# Developer"
+      level: "Junior"
+      fit: "primary"
+    - name: "Software Engineer (.NET)"
+      level: "Junior"
+      fit: "primary"
+    - name: "Trainee .NET Developer"
+      level: "Trainee"
+      fit: "primary"
+    - name: "Junior AI/ML Engineer"
+      level: "Junior"
+      fit: "secondary"
+    - name: "Junior AI Integration Developer"
+      level: "Junior"
+      fit: "secondary"
+
+narrative:
+  headline: "Junior .NET Developer with AI integration experience"
+  exit_story: "Built full-stack AI-powered medical systems using .NET + YOLOv8 as personal projects during studies. Now looking for first commercial role."
+  superpowers:
+    - "ASP.NET Core REST API development (CRUD, DTOs, service layers)"
+    - "AI/ML model integration into .NET via ONNX Runtime (YOLOv8)"
+    - "Database work: MS SQL Server, PostgreSQL, EF Core migrations"
+    - "Docker containerization and Azure deployment"
+    - "Clean code: SOLID, xUnit tests, JWT/RBAC auth"
+  proof_points:
+    - name: "X-Ray Fracture Detection API"
+      url: "https://github.com/R3shotka/XRayFractureDetection"
+      hero_metric: "AI-powered REST API with custom YOLOv8m ONNX model, deployed on Azure Container Apps"
+    - name: "Hospital X-Ray Desktop System"
+      url: "https://github.com/R3shotka/WPFhospitalXray"
+      hero_metric: "Multi-role WPF clinical system with AI fracture detection and continuous fine-tuning pipeline"
+    - name: "Crypto Portfolio Tracker"
+      url: "https://github.com/R3shotka/cryptoProject"
+      hero_metric: "REST API with live CoinGecko prices, JWT auth, rate-limit protection"
+
+compensation:
+  target_range: "$700-1200/month"
+  currency: "USD"
+  minimum: "$500/month"
+  notes: "$500/month is the hard floor. Target is $700-1200/month depending on company size and role scope."
+  location_flexibility: "Remote preferred. On-site or hybrid only in Cherkasy, Ukraine. No relocation."
+
+location: "Cherkasy, Ukraine"
+location_details:
+  country: "Ukraine"
+  city: "Cherkasy"
+  timezone: "EET (UTC+2)"
+  visa_status: "No sponsorship needed (Ukraine-based, remote)"
+  relocation: false
+  remote: true
+  onsite_cities:
+    - "Cherkasy, Ukraine"
+
+cv:
+  output_format: "html"
+
+# Auto-generate PDF only for strong matches (saves time)
+auto_pdf_score_threshold: 3.5
