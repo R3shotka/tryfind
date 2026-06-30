@@ -131,6 +131,15 @@ search_queries:
     query: 'site:himalayas.app ".NET" OR "C#" OR "ASP.NET" junior developer remote'
     enabled: true
 
+  # -- Ukrainian IT job boards (Djinni = #1 for UA devs) --
+  - name: Djinni — .NET Junior / Trainee
+    query: 'site:djinni.co "Junior" OR "Trainee" ".NET" OR "C#" OR "ASP.NET" developer remote'
+    enabled: true
+
+  - name: Djinni — .NET C# all levels
+    query: 'site:djinni.co ".NET" OR "C#" junior trainee developer 2026'
+    enabled: true
+
   # -- European / EMEA job boards (Ukraine-friendly) --
   - name: EuRemoteJobs — .NET Backend
     query: 'site:euremotejobs.com ".NET" OR "C#" OR "ASP.NET" backend developer'
